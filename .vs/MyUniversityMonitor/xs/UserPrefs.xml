@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{72BA8CAC-8C96-8A3A-5E45-F0A43BF76A2F}|">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2D RPG Kit/Scripts/GameMenu.cs">
+    <Files>
+      <File FileName="Assets/2D RPG Kit/Scripts/DialogStarter.cs" Line="141" Column="1" IsPinned="True" />
+      <File FileName="Assets/2D RPG Kit/Scripts/DialogManager.cs" Line="132" Column="69" />
+      <File FileName="Assets/2D RPG Kit/Scripts/CharacterStatus.cs" Line="282" Column="6" />
+      <File FileName="Assets/2D RPG Kit/Scripts/GameManager.cs" Line="67" Column="1" />
+      <File FileName="Assets/2D RPG Kit/Scripts/EventObjectActivator.cs" Line="1" Column="1" />
+      <File FileName="Assets/2D RPG Kit/Scripts/TitleScreen.cs" Line="36" Column="34" />
+      <File FileName="Assets/2D RPG Kit/Scripts/MainObjectsLoader.cs" Line="39" Column="1" />
+      <File FileName="Assets/2D RPG Kit/Scripts/PlayerMove.cs" Line="42" Column="2" />
+      <File FileName="Assets/2D RPG Kit/Scripts/GameMenu.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MyUniversityMonitor" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="2D RPG Kit" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="GameMenu.cs" selected="True" />
+                </Node>
+                <Node name="Touch Support" expanded="True">
+                  <Node name="CrossPlatformInput" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f404c0d1-7b8e-405f-af51-5d53b7213ddc" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
