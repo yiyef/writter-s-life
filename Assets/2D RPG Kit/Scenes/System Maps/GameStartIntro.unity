@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 1351424214896784, guid: de1dfcbb0fed1fa4a87f5d8aa22e9ea0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4585574506691860, guid: de1dfcbb0fed1fa4a87f5d8aa22e9ea0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1094,7 +1098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &720277627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,9 +1801,9 @@ MonoBehaviour:
   autoActive: 1
   endSwitchScene: 0
   loadGameScene: 
-  activateOnAwake: 0
+  activateOnAwake: 1
   activateOnButtonPress: 0
-  activateOnEnter: 0
+  activateOnEnter: 1
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
@@ -2310,7 +2314,7 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523119241}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 675102664d10fde46b1476e7cc974aa6, type: 2}
   m_InitialState: 0

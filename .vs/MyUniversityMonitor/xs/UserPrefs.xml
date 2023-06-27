@@ -1,18 +1,26 @@
 ﻿<Properties StartupConfiguration="{72BA8CAC-8C96-8A3A-5E45-F0A43BF76A2F}|">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/yiyefang/writter-s-life/writter-s-life2/MyUniversityMonitor/Assets/2D RPG Kit/Scripts/DialogManager.cs" relfile="Assets/2D RPG Kit/Scripts/DialogManager.cs" line="359" column="1" />
+      <Breakpoint file="/Users/yiyefang/writter-s-life/writter-s-life2/MyUniversityMonitor/Assets/2D RPG Kit/Scripts/DialogManager.cs" relfile="Assets/2D RPG Kit/Scripts/DialogManager.cs" line="355" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2D RPG Kit/Scripts/GameMenu.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="eb2afd2d-ecec-4628-8d85-1e79c6b97c9d" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2D RPG Kit/Scripts/DialogManager.cs">
     <Files>
       <File FileName="Assets/2D RPG Kit/Scripts/DialogStarter.cs" Line="141" Column="1" IsPinned="True" />
-      <File FileName="Assets/2D RPG Kit/Scripts/DialogManager.cs" Line="132" Column="69" />
-      <File FileName="Assets/2D RPG Kit/Scripts/CharacterStatus.cs" Line="282" Column="6" />
-      <File FileName="Assets/2D RPG Kit/Scripts/GameManager.cs" Line="67" Column="1" />
-      <File FileName="Assets/2D RPG Kit/Scripts/EventObjectActivator.cs" Line="1" Column="1" />
-      <File FileName="Assets/2D RPG Kit/Scripts/TitleScreen.cs" Line="36" Column="34" />
-      <File FileName="Assets/2D RPG Kit/Scripts/MainObjectsLoader.cs" Line="39" Column="1" />
-      <File FileName="Assets/2D RPG Kit/Scripts/PlayerMove.cs" Line="42" Column="2" />
-      <File FileName="Assets/2D RPG Kit/Scripts/GameMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/2D RPG Kit/Scripts/DialogManager.cs" Line="360" Column="30" />
+      <File FileName="Assets/2D RPG Kit/Scripts/CharacterStatus.cs" Line="1" Column="1" />
+      <File FileName="Assets/2D RPG Kit/Scripts/GameManager.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/EventObjectActivator.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/TitleScreen.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/MainObjectsLoader.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/PlayerMove.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/GameMenu.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/MainHUD.cs" Line="13" Column="3" />
+      <File FileName="Assets/2D RPG Kit/Scripts/TriggerDialogAndChangeValue.cs" Line="61" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,9 +28,7 @@
           <Node name="MyUniversityMonitor" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="2D RPG Kit" expanded="True">
-                <Node name="Scripts" expanded="True">
-                  <Node name="GameMenu.cs" selected="True" />
-                </Node>
+                <Node name="Scripts" expanded="True" />
                 <Node name="Touch Support" expanded="True">
                   <Node name="CrossPlatformInput" expanded="True" />
                 </Node>
@@ -31,10 +37,10 @@
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f404c0d1-7b8e-405f-af51-5d53b7213ddc" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
