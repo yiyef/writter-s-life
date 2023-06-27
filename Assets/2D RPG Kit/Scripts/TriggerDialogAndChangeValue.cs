@@ -55,10 +55,10 @@ public class TriggerDialogAndChangeValue : MonoBehaviour
              
 
             // 开始对话
-            DialogManager.instance.ShowDialogAuto(selectedDialogue);
+            //DialogManager.instance.ShowDialogAuto(selectedDialogue);
 
             // 引起数值变动
-            ValueHolder.instance.value += valueChange; // 假设你有一个ValueHolder脚本保存了你想要改变的数值
+            //ValueHolder.instance.value += valueChange; // 假设你有一个ValueHolder脚本保存了你想要改变的数值
         }
     }
 }

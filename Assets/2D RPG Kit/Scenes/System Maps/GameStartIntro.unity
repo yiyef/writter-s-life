@@ -203,7 +203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &116205847
 Transform:
   m_ObjectHideFlags: 0
@@ -260,8 +260,8 @@ MonoBehaviour:
   nextSceneName: Home
   portraits: []
   lines:
-  - //Me
-  - '**'
+  - //**
+  - //me
   - "\u662F\u65F6\u5019\u5927\u5E72\u4E00\u573A\u4E86\uFF01\u6211\u7684\u76EE\u6807\uFF1A\u4E00\u4E2A\u6708\u5B8C\u6210\u4E00\u90E8\u5C0F\u8BF4\uFF01\u52C7\u8005\u554A\uFF0C\u8E0F\u4E0A\u5F81\u7A0B\u5427\uFF01"
   - "\u3000\u2026\u2026\u54B3\u54B3\uFF0C\u5982\u4F60\u6240\u89C1\uFF0C\u6211\u662F\u4E00\u4F4D\u4E2D\u4E8C\u9752\u5E74\u3002"
   - "\u3000\u3000\u5728\u4E00\u4E2A\u5E73\u51E1\u7684\u5C0F\u57CE\u5E02\uFF0C\u6709\u4E00\u4EFD\u5E73\u51E1\u7684\u5DE5\u4F5C\uFF0C\u8FC7\u7740\u6211\u5E73\u51E1\u7684\u4EBA\u751F\u3002"
@@ -1094,7 +1094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &720277627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,7 +1102,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720277626}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e4633cad10b0474e80cd5d467e25dd5, type: 3}
   m_Name: 
@@ -1526,7 +1526,8 @@ Transform:
   m_LocalPosition: {x: -1.6561799, y: -0.33684212, z: -3.3142414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1188397749}
   m_Father: {fileID: 1523119245}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1542,9 +1543,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6f29ecccba4084fbfe1efc1cb2031b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToActivate: {fileID: 116205846}
-  eventToCheck: Rem wakes up
-  activeIfComplete: 0
+  objectToActivate: {fileID: 1188397748}
+  eventToCheck: Game intro
+  activeIfComplete: 1
   waitBeforeActivate: 0
   waitTime: 0
 --- !u!1 &1161252892
@@ -1723,6 +1724,168 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161252892}
   m_CullTransparentMesh: 0
+--- !u!1 &1188397748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188397749}
+  - component: {fileID: 1188397751}
+  - component: {fileID: 1188397750}
+  m_Layer: 0
+  m_Name: Dialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1188397749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188397748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1121572009}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1188397750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188397748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e6a8b9af8285d42a07c9396cc0a2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfItemsHeld: 0
+  numberOfEquipItemsHeld: 0
+  headSpriteRenderer: {fileID: 0}
+  bodySpriteRenderer: {fileID: 0}
+  headUp: {fileID: 0}
+  headDown: {fileID: 0}
+  headLeft: {fileID: 0}
+  headRight: {fileID: 0}
+  bodyUp: {fileID: 0}
+  bodyDown: {fileID: 0}
+  bodyLeft: {fileID: 0}
+  bodyRight: {fileID: 0}
+  saveDefaultRotation: 0
+  portraits: []
+  lines:
+  - //**
+  - //me
+  - "\u662F\u65F6\u5019\u5927\u5E72\u4E00\u573A\u4E86\uFF01\u6211\u7684\u76EE\u6807\uFF1A\u4E00\u4E2A\u6708\u5B8C\u6210\u4E00\u90E8\u5C0F\u8BF4\uFF01\u52C7\u8005\u554A\uFF0C\u8E0F\u4E0A\u5F81\u7A0B\u5427\uFF01"
+  - "\u3000\u2026\u2026\u54B3\u54B3\uFF0C\u5982\u4F60\u6240\u89C1\uFF0C\u6211\u662F\u4E00\u4F4D\u4E2D\u4E8C\u9752\u5E74\u3002"
+  - "\u3000\u3000\u5728\u4E00\u4E2A\u5E73\u51E1\u7684\u5C0F\u57CE\u5E02\uFF0C\u6709\u4E00\u4EFD\u5E73\u51E1\u7684\u5DE5\u4F5C\uFF0C\u8FC7\u7740\u6211\u5E73\u51E1\u7684\u4EBA\u751F\u3002"
+  ChoiceAText: 
+  choiceA: {fileID: 0}
+  ChoiceBText: 
+  choiceB: {fileID: 0}
+  finalMessage: []
+  autoActive: 1
+  endSwitchScene: 0
+  loadGameScene: 
+  activateOnAwake: 0
+  activateOnButtonPress: 0
+  activateOnEnter: 0
+  waitBeforeActivatingDialog: 0
+  waitTime: 0
+  displayName: 1
+  addNewPartyMember: 0
+  partyMemberToAdd: 0
+  destroyAfterJoining: 0
+  isInn: 0
+  innPrice: 0
+  isShop: 0
+  ItemsForSale:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
+  questToMark: 
+  markComplete: 0
+  eventToMark: Game intro
+  markEventComplete: 1
+--- !u!61 &1188397751
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188397748}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1392377050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,7 +2059,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1401676666}
-  - component: {fileID: 1401676665}
   - component: {fileID: 1401676664}
   m_Layer: 0
   m_Name: Event 1 Deactivator
@@ -1920,23 +2082,6 @@ MonoBehaviour:
   objectToActivate: {fileID: 1523119241}
   eventToCheck: Event 1 end
   activeIfComplete: 0
-  waitBeforeActivate: 0
-  waitTime: 0
---- !u!114 &1401676665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401676663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6f29ecccba4084fbfe1efc1cb2031b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToActivate: {fileID: 0}
-  eventToCheck: Event 1 end
-  activeIfComplete: 1
   waitBeforeActivate: 0
   waitTime: 0
 --- !u!4 &1401676666
@@ -2168,7 +2313,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 675102664d10fde46b1476e7cc974aa6, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -2191,8 +2336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c87cb0015b82334fae7e0e4c89008c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolbar: 0
-  currentTab: Display
+  toolbar: 2
+  currentTab: Player
   blackScreen: 0
   fadeFromBlack: 0
   activateScreenFade: 0

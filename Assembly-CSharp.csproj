@@ -90,6 +90,7 @@
     <Compile Include="Assets/2D RPG Kit/Scripts/SceneGUITilemap.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ChatController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" />
+    <Compile Include="Assets/2D RPG Kit/Scripts/TriggerDialogAndChangeValue.cs" />
     <Compile Include="Assets/2D RPG Kit/Scripts/ChestObjectActivator.cs" />
     <Compile Include="Assets/2D RPG Kit/Scripts/GameManager.cs" />
     <Compile Include="Assets/2D RPG Kit/Scripts/Switch.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Assets/GleyPlugins/Localization/Scripts/WordIDs.cs" />
     <Compile Include="Assets/2D RPG Kit/Scripts/BattleManager.cs" />
     <Compile Include="Assets/2D RPG Kit/Scripts/DialogManager.cs" />
+    <Compile Include="Assets/2D RPG Kit/Scripts/DialogueSceneScript.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
     <Compile Include="Assets/2D RPG Kit/Scripts/DestroyOverLifetime.cs" />
     <Compile Include="Assets/GleyPlugins/Localization/Scripts/LocalizationManager.cs" />
@@ -181,8 +183,6 @@
     <Compile Include="Assets/2D RPG Kit/Scripts/BattleTargetButton.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
     <Compile Include="Assets/2D RPG Kit/Scripts/DamageNumber.cs" />
-    <Compile Include="Assets/2D RPG Kit/Scripts/DialogueSceneScript.cs" />
-    <Compile Include="Assets/2D RPG Kit/Scripts/TriggerDialogAndChangeValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

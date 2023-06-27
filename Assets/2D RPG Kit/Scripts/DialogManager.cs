@@ -353,6 +353,7 @@ public class DialogManager : MonoBehaviour {
     public void ShowDialogAuto(Sprite[] portraits, string[] newLines, bool isPerson)
     {
         Debug.Log("ShowDialogAuto");
+        Debug.Log(newLines.Length);
         if (newLines.Length != 0)
         {
             dialogPortraits = portraits;

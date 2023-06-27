@@ -2022,7 +2022,7 @@ MonoBehaviour:
   continueBtn: {fileID: 614055138}
   normalBtn: {fileID: 1809937477}
   es: {fileID: 1568304017}
-  loadGameScene: LoadingScene
+  loadGameScene: GameStartIntro
 --- !u!114 &720277628
 MonoBehaviour:
   m_ObjectHideFlags: 0

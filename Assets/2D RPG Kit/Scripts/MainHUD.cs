@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public static class PlayerInfosChangeEventManage
 {
     public static Action<int> TimeChangeEvent;
-    public static Action<int> TimeChangeEvent;
-    public static Action<int> TimeChangeEvent;
-    public static Action<int> TimeChangeEvent;
+//    public static Action<int> TimeChangeEvent;
+//    public static Action<int> TimeChangeEvent;
+//    public static Action<int> TimeChangeEvent;
 }
 
 

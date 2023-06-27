@@ -10778,7 +10778,6 @@ GameObject:
   - component: {fileID: 1408212696853219839}
   - component: {fileID: 3354458475609458239}
   - component: {fileID: 1699474341167748083}
-  - component: {fileID: 8887607510016509718}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -10814,7 +10813,6 @@ RectTransform:
   - {fileID: 3192951191871010921}
   - {fileID: 7955838021283407082}
   - {fileID: 4435263199988890725}
-  - {fileID: 3471219491416290698}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11628,27 +11626,6 @@ MonoBehaviour:
   MessagePanel: {fileID: 0}
   MessageText: {fileID: 0}
   DeathPanel: {fileID: 0}
---- !u!114 &8887607510016509718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304141697063789551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f302fff3b48cc42c8825a5c8fbcf3d13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneName: Home
-  portraits: []
-  lines:
-  - //Me
-  - '**'
-  - "\u662F\u65F6\u5019\u5927\u5E72\u4E00\u573A\u4E86\uFF01\u6211\u7684\u76EE\u6807\uFF1A\u4E00\u4E2A\u6708\u5B8C\u6210\u4E00\u90E8\u5C0F\u8BF4\uFF01\u52C7\u8005\u554A\uFF0C\u8E0F\u4E0A\u5F81\u7A0B\u5427\uFF01"
-  - "\u3000\u2026\u2026\u54B3\u54B3\uFF0C\u5982\u4F60\u6240\u89C1\uFF0C\u6211\u662F\u4E00\u4F4D\u4E2D\u4E8C\u9752\u5E74\u3002"
-  - "\u3000\u3000\u5728\u4E00\u4E2A\u5E73\u51E1\u7684\u5C0F\u57CE\u5E02\uFF0C\u6709\u4E00\u4EFD\u5E73\u51E1\u7684\u5DE5\u4F5C\uFF0C\u8FC7\u7740\u6211\u5E73\u51E1\u7684\u4EBA\u751F\u3002"
-  displayName: 1
 --- !u!1 &1304161128665080173
 GameObject:
   m_ObjectHideFlags: 0
@@ -19548,82 +19525,6 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!1 &1376567827646493370
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3471219491416290698}
-  - component: {fileID: 3779484782676313396}
-  - component: {fileID: 8136491026325933832}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3471219491416290698
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376567827646493370}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1225418074570347657}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3779484782676313396
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376567827646493370}
-  m_CullTransparentMesh: 1
---- !u!114 &8136491026325933832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376567827646493370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1d9ebbe002fd74fa79aff9d609e4d6c6, type: 3}
-  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
