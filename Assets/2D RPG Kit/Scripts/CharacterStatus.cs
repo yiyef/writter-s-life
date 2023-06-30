@@ -5,7 +5,10 @@ using UnityEngine.UI;
 using TMPro;
 
 
-public class CharacterStatus : MonoBehaviour {
+public class CharacterStatus : MonoBehaviour
+{
+    public CharacterProperties Properties;
+    
     [Header("Default Character Settings")]
     public string characterName;
     public int level = 1;

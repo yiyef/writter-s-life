@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
+[RequireComponent(typeof(CharacterProperties))]
 public class PlayerController : MonoBehaviour {
 
     public GameObject interactionCollider;
@@ -28,11 +30,15 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector]
     public bool canMove = true;
 
+    public CharacterProperties characterProperties;
+    public Action<CharacterProperties> OnPropertiesChangeEvent;
+
 	// Use this for initialization
 	void Awake () {
 
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        characterProperties = GetComponent<CharacterProperties>();
 
         if (instance == null)
         {
