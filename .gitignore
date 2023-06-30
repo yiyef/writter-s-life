@@ -8,3 +8,6 @@ git/
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp.csproj
 Temp/
+.idea/
+Packages/
+ProjectSetting/ProjectVersion.txt
