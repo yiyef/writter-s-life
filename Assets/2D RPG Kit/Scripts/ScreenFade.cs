@@ -61,6 +61,7 @@ public class ScreenFade : MonoBehaviour {
     //Method to activae fading
     public void FadeToBlack()
     {
+        Debug.LogError("dasdsad");
         fadeToBlack = true;
         fadeFromBlack = false;
         fading = true;

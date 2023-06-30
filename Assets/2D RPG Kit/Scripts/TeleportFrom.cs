@@ -59,7 +59,7 @@ public class TeleportFrom : MonoBehaviour {
                 PlayerController.instance.animator.SetFloat("lastMoveY", 0);
             }
         }
-
+        Debug.LogError("22222");
         ScreenFade.instance.FadeFromBlack();
         GameManager.instance.fadingBetweenAreas = false;
 	}
