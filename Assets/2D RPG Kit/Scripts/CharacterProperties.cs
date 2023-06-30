@@ -1,7 +1,8 @@
+using System;
 using UnityEngine;
 
-
-public class CharacterProperties : MonoBehaviour
+[Serializable]
+public struct CharacterProperties
 {
     public int Time;
     public int CurrentHour;
@@ -15,11 +16,6 @@ public class CharacterProperties : MonoBehaviour
 
     public void AddOperation(CharacterProperties add)
     {
-        if (add == null)
-        {
-            return;
-        }
-
         this.Time = add.Time;
         this.CurrentHour = add.CurrentHour;
         this.CurrentMinute = add.CurrentMinute;
