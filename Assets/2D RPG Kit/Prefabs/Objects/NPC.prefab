@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5495425214309360211}
   - component: {fileID: 5495425214309360222}
   - component: {fileID: 8454926758722277852}
+  - component: {fileID: 16584213614976198}
+  - component: {fileID: 7254644890360170945}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -50,7 +52,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -153,6 +154,9 @@ MonoBehaviour:
   ChoiceBText: 
   choiceB: {fileID: 0}
   finalMessage: []
+  autoActive: 0
+  endSwitchScene: 0
+  loadGameScene: 
   activateOnAwake: 0
   activateOnButtonPress: 1
   activateOnEnter: 0
@@ -234,6 +238,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8663682, y: 1.1873324}
   m_EdgeRadius: 0
+--- !u!114 &16584213614976198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5495425214309360213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5195726682429ea196446b99c32fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterProperties: {fileID: 7254644890360170945}
+  onlyActiveOnce: 1
+--- !u!114 &7254644890360170945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5495425214309360213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435eda45339545cc8299a9068b3f40a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Time: 0
+  CurrentHour: 0
+  CurrentMinute: 0
+  Stamina: 0
+  Spirit: 0
+  Food: 0
+  Money: 0
+  Day: 0
 --- !u!1 &8983039642020874486
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +318,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

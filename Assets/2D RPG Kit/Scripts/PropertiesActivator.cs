@@ -8,6 +8,7 @@ public struct DialogInfo
     public string[] lines;
 }
 
+
 [RequireComponent(typeof(BoxCollider2D))]
 public class PropertiesActivator : MonoBehaviour
 {

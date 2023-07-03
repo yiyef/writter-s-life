@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public struct CharacterProperties
+public class CharacterProperties : MonoBehaviour
 {
     public int Time;
     public int CurrentHour;

@@ -50,6 +50,12 @@ public class PlayerMove : MonoBehaviour
         inputMoveX = Input.GetAxisRaw("Horizontal");
         inputMoveY = Input.GetAxisRaw("Vertical");
 
+        if (Mathf.Abs(inputMoveX) > 0 || Mathf.Abs(inputMoveY) > 0)
+        {
+            _nextMovePos = player.transform.position;
+            return;
+        }
+        
         if (Input.GetMouseButton(0))
         {
             Vector3 mousePos = Input.mousePosition;
@@ -57,17 +63,15 @@ public class PlayerMove : MonoBehaviour
             _nextMovePos.z = 0;
             dir = _nextMovePos - player.transform.position;
         }
-        else if (Mathf.Abs(inputMoveX) > 0 || Mathf.Abs(inputMoveY) > 0)
-        {
-            _nextMovePos = player.transform.position;
-            return;
-        }
 
         Vector3 offset = (_nextMovePos - player.transform.position).normalized;
         offset.z = 0;
         float distance = Vector3.Distance(_nextMovePos, player.transform.position);
+        Debug.LogError(distance);
         _playerController.canMove = false;
-        if (distance > 0.1)
+        
+        
+        if (distance > 0.5)
         {
             if (Math.Abs(offset.x) > Math.Abs(offset.y))
             {
@@ -80,30 +84,35 @@ public class PlayerMove : MonoBehaviour
             _rigidbody.velocity = offset * _moveSpeed;
             //player.transform.position = player.transform.position + dir * _moveSpeed * Time.deltaTime;
         }
-        else if (distance > 0.01)
-        {
-            if (Math.Abs(dir.x) > Math.Abs(dir.y))
-            {
-                _animitor.SetFloat("lastMoveX", dir.x < 0 ? -1 : 1);
-                _animitor.SetFloat("lastMoveY", 0);
-            }
-            else
-            {
-                _animitor.SetFloat("lastMoveY", dir.y < 0 ? -1 : 1);
-                _animitor.SetFloat("lastMoveX", 0);
-            }
-            player.transform.position = _nextMovePos;
-        }
         else
         {
-            _playerController.canMove = true;
+            StopMove();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        StopMove();
+    }
+
+    private void StopMove()
+    {
         _nextMovePos = player.transform.position;
+        _rigidbody.velocity = Vector2.zero;
         _animitor.SetFloat("moveX", 0);
         _animitor.SetFloat("moveY", 0);
+        
+        if (Math.Abs(dir.x) > Math.Abs(dir.y))
+        {
+            _animitor.SetFloat("lastMoveX", dir.x < 0 ? -1 : 1);
+            _animitor.SetFloat("lastMoveY", 0);
+        }
+        else
+        {
+            _animitor.SetFloat("lastMoveY", dir.y < 0 ? -1 : 1);
+            _animitor.SetFloat("lastMoveX", 0);
+        }
+        
+        _playerController.canMove = true; 
     }
 }
