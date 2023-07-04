@@ -38,6 +38,7 @@ public class ScreenFade : MonoBehaviour {
         //Set alpha of fade screen image to 1 over time (fadespeed) in order to fade to black
         if (fadeToBlack)
         {
+            //Debug.LogError("toBlack");
             fadeScreenImage.color = new Color(fadeScreenImage.color.r, fadeScreenImage.color.g, fadeScreenImage.color.b, Mathf.MoveTowards(fadeScreenImage.color.a, 1f, fadeSpeed * Time.deltaTime));
 
             if(fadeScreenImage.color.a == 1f)
@@ -49,6 +50,8 @@ public class ScreenFade : MonoBehaviour {
         //Set alpha of fade screen image to 0 over time (fadespeed) in order to fade from black
         if (fadeFromBlack)
         {
+            //Debug.LogError("FromBlack");
+
             fadeScreenImage.color = new Color(fadeScreenImage.color.r, fadeScreenImage.color.g, fadeScreenImage.color.b, Mathf.MoveTowards(fadeScreenImage.color.a, 0f, fadeSpeed * Time.deltaTime));
 
             if (fadeScreenImage.color.a == 0f)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -238,7 +239,6 @@ public class MainHUD : MonoBehaviour
 
     void Update()
     {
-        root.SetActive(!GameManager.instance.cutSceneActive);
     }
 
     // Use this for initialization
