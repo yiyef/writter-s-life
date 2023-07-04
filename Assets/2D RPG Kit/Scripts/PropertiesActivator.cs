@@ -16,14 +16,15 @@ public class PropertiesActivator : MonoBehaviour
 
     public Sprite[] _sprites;
     [SerializeField] 
-    private List<CharacterProperties> characterProperties;
+    private List<CharacterPropertiesInfo> characterProperties;
 
     private int _curIndex;
-    private CharacterProperties _curCharacterProperties;
+    private CharacterPropertiesInfo _curCharacterProperties;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) // 确保只有玩家可以触发
+        Debug.LogError(collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Facing Collider")) // 确保只有玩家可以触发
         {
             // 在所有对话中随机选择一个
             _curIndex = UnityEngine.Random.Range(0, Dialogues.Count);
@@ -43,10 +44,10 @@ public class PropertiesActivator : MonoBehaviour
             return;
         }
         
-        PlayerController.instance.characterProperties.AddOperation(_curCharacterProperties);
-        if (PlayerController.instance.OnPropertiesChangeEvent != null)
+        CharacterProperties.AddOperation(_curCharacterProperties);
+        if (CharacterProperties.OnPropertiesChangeEvent != null)
         {
-            PlayerController.instance.OnPropertiesChangeEvent(_curCharacterProperties);
+            CharacterProperties.OnPropertiesChangeEvent(_curCharacterProperties);
         }
     }
 

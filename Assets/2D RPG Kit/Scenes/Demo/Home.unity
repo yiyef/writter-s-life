@@ -6767,7 +6767,7 @@ PrefabInstance:
     - target: {fileID: 16584213614976198, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
       propertyPath: characterProperties.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 16584213614976198, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
@@ -6791,7 +6791,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16584213614976198, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
+      propertyPath: characterProperties.Array.data[1].CurrentHour
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 16584213614976198, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
       propertyPath: characterProperties.Array.data[0].CurrentMinute
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 16584213614976198, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
+      propertyPath: characterProperties.Array.data[1].CurrentMinute
       value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2542565290835116686, guid: e3537ab304d63544280b86803b7ea07e,
@@ -6867,8 +6877,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5495425214309360211, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495425214309360211, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
       propertyPath: m_Size.y
-      value: 1.581578
+      value: 5.408928
       objectReference: {fileID: 0}
     - target: {fileID: 5495425214309360211, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
@@ -6878,7 +6893,7 @@ PrefabInstance:
     - target: {fileID: 5495425214309360211, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.19165266
+      value: 0.012811184
       objectReference: {fileID: 0}
     - target: {fileID: 5495425214309360211, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
@@ -6944,6 +6959,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 299a36c5c1de544a28fbb121ba5898c3,
         type: 3}
+    - target: {fileID: 5495425214309360222, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5495425214309360222, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
       propertyPath: questToMark
@@ -7077,6 +7097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7254644890360170945, guid: e3537ab304d63544280b86803b7ea07e, type: 3}
+    - {fileID: 8454926758722277852, guid: e3537ab304d63544280b86803b7ea07e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

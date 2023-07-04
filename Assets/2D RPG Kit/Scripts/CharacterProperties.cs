@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class CharacterProperties : MonoBehaviour
+public struct CharacterPropertiesInfo
 {
     public int Time;
     public int CurrentHour;
@@ -12,17 +12,34 @@ public class CharacterProperties : MonoBehaviour
     public int Spirit;
     public int Food;
     public int Money;
-    public int Day;
+    public int Day; 
+}
 
-    public void AddOperation(CharacterProperties add)
+public class CharacterProperties
+{
+    public static CharacterPropertiesInfo PlayerInfo;
+    public static Action<CharacterPropertiesInfo> OnPropertiesChangeEvent;
+
+    static CharacterProperties()
     {
-        this.Time = add.Time;
-        this.CurrentHour = add.CurrentHour;
-        this.CurrentMinute = add.CurrentMinute;
-        this.Stamina = add.Stamina;
-        this.Spirit = add.Spirit;
-        this.Food = add.Food;
-        this.Money = add.Money;
-        this.Day = add.Day;
+        PlayerInfo.Stamina = 80;
+        PlayerInfo.Spirit = 80;
+        PlayerInfo.Food = 80;
+        PlayerInfo.Day = 1;
+        PlayerInfo.Money = 2000;
+        PlayerInfo.CurrentHour = 7;
+        PlayerInfo.CurrentMinute = 0;
+    }
+     
+    public static void AddOperation(CharacterPropertiesInfo add)
+    {
+        PlayerInfo.Time += add.Time;
+        PlayerInfo.CurrentHour += add.CurrentHour;
+        PlayerInfo.CurrentMinute += add.CurrentMinute;
+        PlayerInfo.Stamina += add.Stamina;
+        PlayerInfo.Spirit += add.Spirit;
+        PlayerInfo.Food += add.Food;
+        PlayerInfo.Money += add.Money;
+        PlayerInfo.Day += add.Day;
     }
 }

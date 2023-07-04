@@ -5,17 +5,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class PlayerInfosChangeEventManage
-{
-    public static Action<int> TimeChangeEvent;
-//    public static Action<int> TimeChangeEvent;
-//    public static Action<int> TimeChangeEvent;
-//    public static Action<int> TimeChangeEvent;
-}
-
 
 public class MainHUD : MonoBehaviour
 {
+    public GameObject root;
     public int Time;
     public int currentHour;
     public int currentMinute;
@@ -61,16 +54,33 @@ public class MainHUD : MonoBehaviour
     //    SetupGame();
 
     //}
+
+    public void OnEnable()
+    {
+        CharacterProperties.OnPropertiesChangeEvent += OnPropertiesChange;
+    }
+
+    public void OnPropertiesChange(CharacterPropertiesInfo characterPropertiesInfo)
+    {
+        UpdateData();
+        UpdateUI();
+    }
+
+    public void UpdateData()
+    {
+        Time = CharacterProperties.PlayerInfo.Time;
+        currentHour = CharacterProperties.PlayerInfo.Time;
+        currentMinute = CharacterProperties.PlayerInfo.CurrentMinute;
+        Stamina = CharacterProperties.PlayerInfo.Stamina; 
+        Spirit = CharacterProperties.PlayerInfo.Spirit; 
+        Food = CharacterProperties.PlayerInfo.Food; 
+        Money = CharacterProperties.PlayerInfo.Money; 
+        Day = CharacterProperties.PlayerInfo.Day; 
+    }
+
     public void SetupGame()
     {
-        Stamina = 80;
-        Spirit = 80;
-        Food = 80;
-        Day = 1;
-        Money = 2000;
-        currentHour = 7;
-        currentMinute = 0;
-
+        UpdateData();
         UpdateUI();
         //DeathPanel.SetActive(false);
         //MessagePanel.SetActive(false);
@@ -186,8 +196,6 @@ public class MainHUD : MonoBehaviour
 
         if (Spirit <= 0)
             YouDied();
-
-
     }
 
 
@@ -228,23 +236,15 @@ public class MainHUD : MonoBehaviour
         MessagePanel.SetActive(false);
     }
 
+    void Update()
+    {
+        root.SetActive(!GameManager.instance.cutSceneActive);
+    }
+
     // Use this for initialization
     void Start()
     {
-
-        //if (!manualEXP)
-        //{
-        //    eXPToNextLevel = new int[maxLevel];
-        //    eXPToNextLevel[1] = firstNextLevelEXP;
-
-        //    for (int i = 2; i < eXPToNextLevel.Length; i++)
-        //    {
-        //        eXPToNextLevel[i] = Mathf.FloorToInt(eXPToNextLevel[i - 1] * multiplicationFactor + 10);
-        //    }
-        //}
         SetupGame();
         UpdateUI();
-
-
     }
 }
