@@ -53,6 +53,7 @@ public class PlayerMove : MonoBehaviour
         if (Mathf.Abs(inputMoveX) > 0 || Mathf.Abs(inputMoveY) > 0)
         {
             _nextMovePos = player.transform.position;
+            dir = Vector2.zero;
             return;
         }
         
@@ -67,7 +68,6 @@ public class PlayerMove : MonoBehaviour
         Vector3 offset = (_nextMovePos - player.transform.position).normalized;
         offset.z = 0;
         float distance = Vector3.Distance(_nextMovePos, player.transform.position);
-        Debug.LogError(distance);
         _playerController.canMove = false;
         
         
@@ -101,13 +101,12 @@ public class PlayerMove : MonoBehaviour
         _rigidbody.velocity = Vector2.zero;
         _animitor.SetFloat("moveX", 0);
         _animitor.SetFloat("moveY", 0);
-        
         if (Math.Abs(dir.x) > Math.Abs(dir.y))
         {
             _animitor.SetFloat("lastMoveX", dir.x < 0 ? -1 : 1);
             _animitor.SetFloat("lastMoveY", 0);
         }
-        else
+        else if((Math.Abs(dir.y) - Math.Abs(dir.x) > 0.1f))
         {
             _animitor.SetFloat("lastMoveY", dir.y < 0 ? -1 : 1);
             _animitor.SetFloat("lastMoveX", 0);

@@ -145,7 +145,6 @@ public class PlayerController : MonoBehaviour {
             if (canMove)
             {
                 rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-                Debug.LogError(rigidBody.velocity.normalized);
                 rigidBody.velocity = rigidBody.velocity.normalized * moveSpeed;
             }
             else
@@ -166,10 +165,8 @@ public class PlayerController : MonoBehaviour {
                 }
             }
 
-            Debug.LogError(boundary1);
-            Debug.LogError(boundary2);
             //This calculates the bounds and doesn't let the player go beyond the defined bounds
-            //transform.position = new Vector3(Mathf.Clamp(transform.position.x, boundary1.x, boundary2.x), Mathf.Clamp(transform.position.y, boundary1.y, boundary2.y), transform.position.z);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, boundary1.x, boundary2.x), Mathf.Clamp(transform.position.y, boundary1.y, boundary2.y), transform.position.z);
         }
         
     }
