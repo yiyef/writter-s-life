@@ -265,7 +265,7 @@ public class CommonEvents : MonoBehaviour
             {
                 PlayerController.instance.transform.position = newPosition;
                 SceneManager.LoadScene(scene);
-                
+                ScreenFade.instance.FadeFromBlack();
             }
             
            // }

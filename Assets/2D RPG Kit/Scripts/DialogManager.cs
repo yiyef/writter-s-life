@@ -39,6 +39,11 @@ public class DialogManager : MonoBehaviour {
     public Text choiceALabel;
     public Text choiceBLabel;
 
+    public GameObject choicesRoot;
+    public GameObject choicePrefab;
+    [HideInInspector]
+    public DialogGroup dialogGroup;
+
     List<string[]> dialoguesRandom;
 
     [HideInInspector]
@@ -196,18 +201,18 @@ public class DialogManager : MonoBehaviour {
                         }
                         else
                         {
-                            dialogChoices.SetActive(true);
-                            GameMenu.instance.btn = choiceButton;
-                            GameMenu.instance.SelectFirstButton();
+                            //dialogChoices.SetActive(true);
+                            //GameMenu.instance.btn = choiceButton;
+                            //GameMenu.instance.SelectFirstButton();
                         }
-
-                        
                     }
                     else
                     {
                         //Show name 
                         CheckIfName();
                         CheckIfPortrait();
+                        CheckChoice();
+                        CheckProperties();
 
                         dialogText.text = dialogLines[currentLine];
                     }
@@ -221,6 +226,23 @@ public class DialogManager : MonoBehaviour {
         }
 
 	}
+
+    public void ShowNextDialog()
+    {
+        currentLine++;
+        if (currentLine < dialogLines.Length)
+        {
+            CheckChoice();
+            CheckProperties();
+
+            dialogText.text = dialogLines[currentLine];
+        }
+        else
+        {
+            dialogBox.SetActive(false);
+            GameManager.instance.dialogActive = false;
+        }
+    }
 
     //Method to call the dialog. Needs the lines as string array + bool for 
     //Use this to call a dialog that is activated by a button press
@@ -474,6 +496,115 @@ public class DialogManager : MonoBehaviour {
 
     }
 
+    
+    public void ShowDialogAuto(Sprite[] portraits,DialogGroup dialogGroupNew, bool isPerson)
+    {
+        Debug.Log("ShowDialogAuto");
+        string[] newLines = dialogGroupNew.GetLines();
+        Debug.Log(newLines.Length);
+        choicesRoot.SetActive(false);
+        if (newLines.Length != 0)
+        {
+            dialogPortraits = portraits;
+            dialogLines = newLines;
+            dialogGroup = dialogGroupNew;
+
+
+            currentLine = 0;
+
+            CheckIfName();
+            CheckIfPortrait();
+
+            dialogText.text = dialogLines[currentLine];
+            dialogBox.SetActive(true);
+
+
+            justStarted = false;
+
+            nameBox.SetActive(isPerson);
+
+            GameManager.instance.dialogActive = true;
+        }
+
+        if (newLines.Length == 0)
+        {
+            if (itemRecieved && !fullInventory)
+            {
+                GameMenu.instance.gotItemMessageText.text = "You found a " + Shop.instance.selectedItem.name + "!";
+                StartCoroutine(gotItemMessageCo());
+                itemRecieved = false;
+            }
+
+            if (itemGiven)
+            {
+                GameMenu.instance.gotItemMessageText.text = "You gave " + Shop.instance.selectedItem.name + "!";
+                StartCoroutine(gotItemMessageCo());
+                itemGiven = false;
+            }
+
+            if (fullInventory)
+            {
+                Shop.instance.promptText.text = "You found a " + Shop.instance.selectedItem.name + "." + "\n" + "But your equipment bag is full!";
+                StartCoroutine(Shop.instance.PromptCo());
+                fullInventory = false;
+            }
+
+            if (addedPartyMember)
+            {
+                Destroy(NPC);
+                addedPartyMember = false;
+            }
+
+            //Adds next caharacter to party
+            if (addNewPartyMember)
+            {
+                GameManager.instance.characterSlots[partyMemberToAdd].SetActive(true);
+            }
+
+            //Opens inn menu
+            if (isInn)
+            {
+                Inn.instance.OpenInn();
+                dontOpenDialogAgain = true;
+            }
+            //Opens shop menu
+            if (isShop)
+            {
+
+                Shop.instance.OpenShop();
+                dontOpenDialogAgain = true;
+            }
+
+            //Marks quest complete
+            if (shouldMarkQuest)
+            {
+                shouldMarkQuest = false;
+                if (markQuestComplete)
+                {
+                    QuestManager.instance.MarkQuestComplete(questToMark);
+                }
+                else
+                {
+                    QuestManager.instance.MarkQuestIncomplete(questToMark);
+                }
+            }
+
+            //Marks event complete
+            if (shouldMarkEvent)
+            {
+                shouldMarkEvent = false;
+                if (markEventComplete1)
+                {
+                    EventManager.instance.MarkEventComplete(eventToMark);
+                }
+                else
+                {
+                    EventManager.instance.MarkEventIncomplete(eventToMark);
+                }
+            }
+        }
+
+    }
 
     //Method to call good bye lines for closing message when exiting the shop/inn
     public void SayGoodBye(string[] goodByeLines, bool isPerson)
@@ -554,6 +685,22 @@ public class DialogManager : MonoBehaviour {
 
     }
 
+    public void CheckChoice()
+    {
+        choicesRoot.SetActive(false);
+        List<ChoiceData> choicesData = dialogGroup.FindChoiceData(dialogLines[currentLine]);
+        if (choicesData != null && choicesData.Count > 0)
+        {
+            Debug.LogError(choicesData);
+            ShowChoice(choicesData);
+        }
+    }
+    
+    public void CheckProperties()
+    {
+        CharacterProperties.AddOperation(dialogGroup.FindProperties(dialogLines[currentLine]));
+    }
+
     public void CheckIfPortrait()
     {
         
@@ -608,10 +755,22 @@ public class DialogManager : MonoBehaviour {
 
     }
 
+    private List<GameObject> choies =  new List<GameObject>();
+    public void ShowChoice(List<ChoiceData> choicesData)
+    {
+        Debug.Log("showChoice");
+        choicesRoot.SetActive(true);
+        int count = choicesData.Count;
+        ObjectPool.GetSpawnGameObjectCount(choicesRoot,choicePrefab,choies,count);
+        for (int i = 0; i < count; i++)
+        {
+            ChoiceComponent component = choies[i].GetComponent<ChoiceComponent>();
+            component.InitChoiceComponent(choicesData[i]);
+        }
+    }
+
     public void SelectDialogChoice(int buttonValue)
     {
-        
-
         dialogObject.SetActive(false);
         dialogBox.SetActive(false);
 

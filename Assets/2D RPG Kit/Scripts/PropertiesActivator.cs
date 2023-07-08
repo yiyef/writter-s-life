@@ -5,49 +5,88 @@ using UnityEngine;
 [Serializable]
 public struct DialogInfo
 {
-    public string[] lines;
+    public string Desc;
+    public List<ChoiceData> ChoicesData;
+    public CharacterPropertiesInfo PropertiesInfo;
 }
 
+[Serializable]
+public class DialogGroup
+{
+    public List<DialogInfo> dialogInfos;
+
+    public List<ChoiceData> FindChoiceData(string desc)
+    {
+        if (dialogInfos == null)
+        {
+            return null;
+        }
+
+        for (int i = 0; i < dialogInfos.Count; i++)
+        {
+            if (dialogInfos[i].Desc.Equals(desc))
+            {
+                return dialogInfos[i].ChoicesData;
+            }
+        }
+        return null;
+    }
+    
+    public CharacterPropertiesInfo FindProperties(string desc)
+    {
+        CharacterPropertiesInfo result = new CharacterPropertiesInfo();
+        for (int i = 0; i < dialogInfos.Count; i++)
+        {
+            if (dialogInfos[i].Desc.Equals(desc))
+            {
+                result = dialogInfos[i].PropertiesInfo;
+            }
+        }
+        return result;
+    }
+    
+    public string[] GetLines()
+    {
+        if (dialogInfos == null)
+        {
+            return null;
+        }
+
+        List<string> result = new List<string>();
+        for (int i = 0; i < dialogInfos.Count; i++)
+        {
+            result.Add(dialogInfos[i].Desc);
+        }
+
+        return result.ToArray();
+    }
+}
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class PropertiesActivator : MonoBehaviour
 {
-    public List<DialogInfo> Dialogues; // 每个string数组代表一个对话，可以在Unity编辑器中设置
+    [SerializeField]
+    public List<DialogGroup> Dialogues;
 
     public Sprite[] _sprites;
-    [SerializeField] 
-    private List<CharacterPropertiesInfo> characterProperties;
-
+    
     private int _curIndex;
-    private CharacterPropertiesInfo _curCharacterProperties;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.LogError(collision.gameObject.name);
         if (collision.gameObject.CompareTag("Facing Collider")) // 确保只有玩家可以触发
         {
+            CharacterProperties.PlayerInfo.
             // 在所有对话中随机选择一个
             _curIndex = UnityEngine.Random.Range(0, Dialogues.Count);
-            _curCharacterProperties = characterProperties[_curIndex];
-            string[] selectedDialogue = Dialogues[_curIndex].lines;
-            
-            // 开始对话
-            DialogManager.instance.ShowDialogAuto(_sprites,selectedDialogue,false);
-            AddProperties();
-        }
-    }
-
-    public void AddProperties()
-    {
-        if (PlayerController.instance == null)
-        {
-            return;
-        }
-        
-        CharacterProperties.AddOperation(_curCharacterProperties);
-        if (CharacterProperties.OnPropertiesChangeEvent != null)
-        {
-            CharacterProperties.OnPropertiesChangeEvent(_curCharacterProperties);
+            DialogGroup dialogGroup = Dialogues[_curIndex];
+            if (dialogGroup.dialogInfos != null)
+            {
+                // 开始对话
+                DialogManager.instance.ShowDialogAuto(_sprites, dialogGroup, false);
+            }
         }
     }
 

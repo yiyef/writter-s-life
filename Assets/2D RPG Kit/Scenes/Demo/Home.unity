@@ -6750,6 +6750,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 16584213614976198, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
+      propertyPath: _choices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 16584213614976198, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
       propertyPath: _sprites.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6915,6 +6920,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bed
       objectReference: {fileID: 0}
+    - target: {fileID: 5495425214309360213, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5495425214309360222, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
       propertyPath: bodyUp
@@ -6926,6 +6936,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 299a36c5c1de544a28fbb121ba5898c3,
         type: 3}
+    - target: {fileID: 5495425214309360222, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
+      propertyPath: choiceA
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495425214309360222, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
+      propertyPath: choiceB
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5495425214309360222, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
       propertyPath: bodyDown
@@ -6962,7 +6982,17 @@ PrefabInstance:
     - target: {fileID: 5495425214309360222, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495425214309360222, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
+      propertyPath: ChoiceAText
+      value: name1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495425214309360222, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
+      propertyPath: ChoiceBText
+      value: name2
       objectReference: {fileID: 0}
     - target: {fileID: 5495425214309360222, guid: e3537ab304d63544280b86803b7ea07e,
         type: 3}
@@ -7098,9 +7128,14 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7254644890360170945, guid: e3537ab304d63544280b86803b7ea07e, type: 3}
     - {fileID: 8454926758722277852, guid: e3537ab304d63544280b86803b7ea07e, type: 3}
+    - {fileID: 16584213614976198, guid: e3537ab304d63544280b86803b7ea07e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5495425214309360213, guid: e3537ab304d63544280b86803b7ea07e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1636838867}
   m_SourcePrefab: {fileID: 100100000, guid: e3537ab304d63544280b86803b7ea07e, type: 3}
 --- !u!1 &1636838863 stripped
 GameObject:
@@ -7120,6 +7155,158 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1636838862}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1636838867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636838863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5195726682429ea196446b99c32fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogues:
+  - dialogInfos:
+    - Desc: no choice
+      ChoicesData: []
+      PropertiesInfo:
+        Time: 0
+        CurrentHour: 0
+        CurrentMinute: 0
+        Stamina: 0
+        Spirit: 0
+        Food: 0
+        Money: 0
+        Day: 0
+    - Desc: have choices
+      ChoicesData:
+      - choiceDesc: dasdasd
+        PropertiesInfo:
+          Time: 213
+          CurrentHour: 0
+          CurrentMinute: 0
+          Stamina: 0
+          Spirit: 0
+          Food: 0
+          Money: 0
+          Day: 0
+      - choiceDesc: 23
+        PropertiesInfo:
+          Time: 123
+          CurrentHour: 0
+          CurrentMinute: 0
+          Stamina: 0
+          Spirit: 0
+          Food: 0
+          Money: 0
+          Day: 0
+      - choiceDesc: 323
+        PropertiesInfo:
+          Time: 123
+          CurrentHour: 0
+          CurrentMinute: 0
+          Stamina: 0
+          Spirit: 0
+          Food: 0
+          Money: 0
+          Day: 0
+      - choiceDesc: 434
+        PropertiesInfo:
+          Time: 123
+          CurrentHour: 0
+          CurrentMinute: 0
+          Stamina: 0
+          Spirit: 0
+          Food: 0
+          Money: 0
+          Day: 0
+      PropertiesInfo:
+        Time: 0
+        CurrentHour: 0
+        CurrentMinute: 0
+        Stamina: 0
+        Spirit: 0
+        Food: 0
+        Money: 0
+        Day: 0
+    - Desc: dshfkjdfkhdkh
+      ChoicesData: []
+      PropertiesInfo:
+        Time: 324555
+        CurrentHour: 0
+        CurrentMinute: 0
+        Stamina: 0
+        Spirit: 0
+        Food: 0
+        Money: 0
+        Day: 0
+    - Desc: 3232
+      ChoicesData: []
+      PropertiesInfo:
+        Time: 324555
+        CurrentHour: 0
+        CurrentMinute: 0
+        Stamina: 0
+        Spirit: 0
+        Food: 0
+        Money: 0
+        Day: 0
+    - Desc: 545443
+      ChoicesData: []
+      PropertiesInfo:
+        Time: 324555
+        CurrentHour: 0
+        CurrentMinute: 0
+        Stamina: 0
+        Spirit: 0
+        Food: 0
+        Money: 0
+        Day: 0
+    - Desc: 43666
+      ChoicesData: []
+      PropertiesInfo:
+        Time: 324555
+        CurrentHour: 0
+        CurrentMinute: 0
+        Stamina: 0
+        Spirit: 0
+        Food: 0
+        Money: 0
+        Day: 0
+    - Desc: have choice2
+      ChoicesData:
+      - choiceDesc: a
+        PropertiesInfo:
+          Time: 123
+          CurrentHour: 0
+          CurrentMinute: 0
+          Stamina: 0
+          Spirit: 0
+          Food: 0
+          Money: 0
+          Day: 0
+      - choiceDesc: b
+        PropertiesInfo:
+          Time: 123
+          CurrentHour: 0
+          CurrentMinute: 0
+          Stamina: 0
+          Spirit: 0
+          Food: 0
+          Money: 0
+          Day: 0
+      PropertiesInfo:
+        Time: 0
+        CurrentHour: 0
+        CurrentMinute: 0
+        Stamina: 0
+        Spirit: 0
+        Food: 0
+        Money: 0
+        Day: 0
+  _sprites: []
 --- !u!1 &1801772483
 GameObject:
   m_ObjectHideFlags: 0

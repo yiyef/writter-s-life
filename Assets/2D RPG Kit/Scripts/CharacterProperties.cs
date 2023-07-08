@@ -41,5 +41,10 @@ public class CharacterProperties
         PlayerInfo.Food += add.Food;
         PlayerInfo.Money += add.Money;
         PlayerInfo.Day += add.Day;
+        
+        if (OnPropertiesChangeEvent != null)
+        {
+            OnPropertiesChangeEvent(add);
+        }
     }
 }
