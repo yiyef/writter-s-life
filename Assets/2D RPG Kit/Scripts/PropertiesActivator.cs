@@ -78,7 +78,6 @@ public class PropertiesActivator : MonoBehaviour
         Debug.LogError(collision.gameObject.name);
         if (collision.gameObject.CompareTag("Facing Collider")) // 确保只有玩家可以触发
         {
-            CharacterProperties.PlayerInfo.
             // 在所有对话中随机选择一个
             _curIndex = UnityEngine.Random.Range(0, Dialogues.Count);
             DialogGroup dialogGroup = Dialogues[_curIndex];
