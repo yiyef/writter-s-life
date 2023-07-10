@@ -50,7 +50,7 @@ public class ObjectPool
         for (int i = 0; i < nowHaveSpawnCount; i++)
         {
             GameObject spawnGo = spawnList[i];
-            spawnGo.SetActive(i <= count);
+            spawnGo.SetActive(i < count);
         }
     }
 }

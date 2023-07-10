@@ -59,6 +59,15 @@ public class MainHUD : MonoBehaviour
     public void OnEnable()
     {
         CharacterProperties.OnPropertiesChangeEvent += OnPropertiesChange;
+        SceneManager.sceneLoaded += ActiveStatusPanel;
+
+    }
+    
+    public void OnDisable()
+    {
+        CharacterProperties.OnPropertiesChangeEvent = null;
+        SceneManager.sceneLoaded -= ActiveStatusPanel;
+
     }
 
     public void OnPropertiesChange(CharacterPropertiesInfo characterPropertiesInfo)
@@ -86,6 +95,12 @@ public class MainHUD : MonoBehaviour
         //DeathPanel.SetActive(false);
         //MessagePanel.SetActive(false);
     }
+
+    private void ActiveStatusPanel(Scene scene,LoadSceneMode loadSceneMode)
+    {
+        root.SetActive(scene.buildIndex > 1);
+    }
+    
     void UpdateClockDisplay()
     {
         clockText.text = "Day: " + Day + " Time:" + currentHour.ToString("D2") + ":" + currentMinute.ToString("D2");
@@ -183,6 +198,8 @@ public class MainHUD : MonoBehaviour
         ClampHealthAndFood();
         CheckForFood();
 
+        Scene scene = SceneManager.GetActiveScene();
+        root.SetActive(scene.buildIndex > 1);
         StaminaText.text = "Stamina: " + Stamina;
         SpiritText.text = "Spirit: " + Spirit;
         //FoodText.text = "Food: " + Food;
@@ -240,6 +257,7 @@ public class MainHUD : MonoBehaviour
     void Update()
     {
     }
+    
 
     // Use this for initialization
     void Start()

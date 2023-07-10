@@ -27,8 +27,6 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector]
     public bool canMove = true;
 
-    public Action<CharacterPropertiesInfo> OnPropertiesChangeEvent;
-
 	// Use this for initialization
 	void Awake () {
 
