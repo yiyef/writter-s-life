@@ -32,6 +32,24 @@ public class DialogGroup
         return null;
     }
     
+    public bool TryGetDialogInfo(string desc,out DialogInfo dialogInfo)
+    {
+        if (dialogInfos != null)
+        {
+            for (int i = 0; i < dialogInfos.Count; i++)
+            {
+                if (dialogInfos[i].Desc.Equals(desc))
+                {
+                    dialogInfo = dialogInfos[i];
+                    return true;
+                }
+            }
+        }
+        
+        dialogInfo = default;
+        return false;
+    }
+    
     public CharacterPropertiesInfo FindProperties(string desc)
     {
         CharacterPropertiesInfo result = new CharacterPropertiesInfo();

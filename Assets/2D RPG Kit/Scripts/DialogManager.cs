@@ -43,6 +43,8 @@ public class DialogManager : MonoBehaviour {
     public GameObject choicePrefab;
     [HideInInspector]
     public DialogGroup dialogGroup;
+    [HideInInspector]
+    public DialogInfo curDialogInfo;
 
     List<string[]> dialoguesRandom;
 
@@ -87,7 +89,7 @@ public class DialogManager : MonoBehaviour {
                 {
                     //Prevents opening the dialog box again after confirmin the last lline with button press (Since progressing through dialog is the same button as activating dialog
                     dontOpenDialogAgain = false;
-                    currentLine++;
+                    AddNextDescLine();
 
                     //Check if the current line is within the length of dialog lines and close the dialog box if the last line was reached
                     if (currentLine >= dialogLines.Length)
@@ -227,9 +229,10 @@ public class DialogManager : MonoBehaviour {
 
 	}
 
-    public void ShowNextDialog()
+    public void ShowNextDialog(int gotoIndex)
     {
-        currentLine++;
+        AddNextDescLine(gotoIndex);
+        
         if (currentLine < dialogLines.Length)
         {
             CheckChoice();
@@ -676,7 +679,7 @@ public class DialogManager : MonoBehaviour {
         if (dialogLines[currentLine].StartsWith("//"))
         {
             nameText.text = dialogLines[currentLine].Replace("//", "");
-            currentLine++;
+            AddNextDescLine();
         }
         else
         {
@@ -688,11 +691,18 @@ public class DialogManager : MonoBehaviour {
     public void CheckChoice()
     {
         choicesRoot.SetActive(false);
-        List<ChoiceData> choicesData = dialogGroup.FindChoiceData(dialogLines[currentLine]);
-        if (choicesData != null && choicesData.Count > 0)
+        if (dialogGroup == null)
         {
-            Debug.LogError(choicesData);
-            ShowChoice(choicesData);
+            return;
+        }
+
+        if (dialogGroup.TryGetDialogInfo(dialogLines[currentLine], out curDialogInfo))
+        {
+            List<ChoiceData> choicesData = curDialogInfo.ChoicesData;
+            if (choicesData != null && choicesData.Count > 0)
+            {
+                ShowChoice(choicesData);
+            }
         }
     }
     
@@ -701,9 +711,21 @@ public class DialogManager : MonoBehaviour {
         CharacterProperties.AddOperation(dialogGroup.FindProperties(dialogLines[currentLine]));
     }
 
+    public void AddNextDescLine(int gotoIndex = -1)
+    {
+        if (gotoIndex >= 0 && gotoIndex < dialogGroup.dialogInfos.Count)
+        {
+            curDialogInfo = dialogGroup.dialogInfos[gotoIndex];
+            currentLine = gotoIndex;
+        }
+        else
+        {
+            currentLine++;
+        }
+    }
+
     public void CheckIfPortrait()
     {
-        
         if (dialogPortraits != null)
         {
             if (dialogLines[currentLine].StartsWith("**"))
@@ -715,12 +737,12 @@ public class DialogManager : MonoBehaviour {
                     portrait.color = new Color(1, 1, 1, 1);
                     int currentPortrait = Convert.ToInt32(portraitText);
                     portrait.sprite = dialogPortraits[currentPortrait];
-                    currentLine++;
+                    AddNextDescLine();
                 }
                 else
                 {
                     portrait.color = new Color(1, 1, 1, 0);
-                    currentLine++;
+                    AddNextDescLine();
                 }
 
             }

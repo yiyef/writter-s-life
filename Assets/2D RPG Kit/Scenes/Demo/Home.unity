@@ -7183,6 +7183,8 @@ MonoBehaviour:
     - Desc: have choices
       ChoicesData:
       - choiceDesc: dasdasd
+        NeedGoto: 0
+        GotoIndex: 0
         PropertiesInfo:
           Time: 213
           CurrentHour: 0
@@ -7193,6 +7195,8 @@ MonoBehaviour:
           Money: 0
           Day: 0
       - choiceDesc: 23
+        NeedGoto: 0
+        GotoIndex: 0
         PropertiesInfo:
           Time: 123
           CurrentHour: 0
@@ -7203,6 +7207,8 @@ MonoBehaviour:
           Money: 0
           Day: 0
       - choiceDesc: 323
+        NeedGoto: 1
+        GotoIndex: 4
         PropertiesInfo:
           Time: 123
           CurrentHour: 0
@@ -7213,6 +7219,8 @@ MonoBehaviour:
           Money: 0
           Day: 0
       - choiceDesc: 434
+        NeedGoto: 0
+        GotoIndex: 0
         PropertiesInfo:
           Time: 123
           CurrentHour: 0
@@ -7278,6 +7286,8 @@ MonoBehaviour:
     - Desc: have choice2
       ChoicesData:
       - choiceDesc: a
+        NeedGoto: 0
+        GotoIndex: 0
         PropertiesInfo:
           Time: 123
           CurrentHour: 0
@@ -7288,6 +7298,8 @@ MonoBehaviour:
           Money: 0
           Day: 0
       - choiceDesc: b
+        NeedGoto: 0
+        GotoIndex: 0
         PropertiesInfo:
           Time: 123
           CurrentHour: 0

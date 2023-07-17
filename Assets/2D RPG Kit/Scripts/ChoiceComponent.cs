@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class ChoiceData
 {
     public string choiceDesc;
+    public bool NeedGoto;
+    public int GotoIndex;
     public CharacterPropertiesInfo PropertiesInfo;
 }
 
@@ -29,7 +31,14 @@ public class ChoiceComponent : MonoBehaviour
         {
             return;
         }
-        //DialogManager.instance.ShowNextDialog();
+
+        int nextGotoIndex = -1;
+
+        if (_choiceData.NeedGoto)
+        {
+            nextGotoIndex = _choiceData.GotoIndex;
+        }
+        DialogManager.instance.ShowNextDialog(nextGotoIndex);
         CharacterProperties.AddOperation(_choiceData.PropertiesInfo); 
     }
 }
