@@ -1,5 +1,6 @@
 public enum WordIDs
 {
+ = 11,
 continue1 = 1,
 exit1 = 3,
 language1 = 2,
@@ -11,5 +12,6 @@ sleep1 = 7,
 sleep11 = 8,
 sleep12 = 9,
 sleep13 = 10,
- = 11,
+sleep2 = 12,
+ = 13,
 }
