@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 using System;
+using GleyLocalization;
 
 public class DialogManager : MonoBehaviour {
 
@@ -216,7 +217,8 @@ public class DialogManager : MonoBehaviour {
                         CheckChoice();
                         CheckProperties();
 
-                        dialogText.text = dialogLines[currentLine];
+                        //dialogText.text = dialogLines[currentLine];
+                        SetDialogText(dialogLines[currentLine]);
                     }
                 } else
                 {
@@ -237,13 +239,24 @@ public class DialogManager : MonoBehaviour {
         {
             CheckChoice();
             CheckProperties();
-
-            dialogText.text = dialogLines[currentLine];
         }
         else
         {
             dialogBox.SetActive(false);
             GameManager.instance.dialogActive = false;
+        }
+    }
+
+    private void SetDialogText(string content)
+    {
+        WordIDs wordIDs;
+        if (WordIDs.TryParse(content, out wordIDs))
+        {
+            dialogText.text = LocalizationManager.Instance.GetText(wordIDs);
+        }
+        else
+        {
+            dialogText.text = dialogLines[currentLine];
         }
     }
 
@@ -264,7 +277,8 @@ public class DialogManager : MonoBehaviour {
             CheckIfName();
             CheckIfPortrait();
 
-            dialogText.text = dialogLines[currentLine];
+            //dialogText.text = dialogLines[currentLine];
+            SetDialogText(dialogLines[currentLine]);
             dialogBox.SetActive(true);
 
 
@@ -390,7 +404,7 @@ public class DialogManager : MonoBehaviour {
             CheckIfName();
             CheckIfPortrait();
 
-            dialogText.text = dialogLines[currentLine];
+            SetDialogText(dialogLines[currentLine]);
             dialogBox.SetActive(true);
 
 
@@ -518,7 +532,8 @@ public class DialogManager : MonoBehaviour {
             CheckIfName();
             CheckIfPortrait();
 
-            dialogText.text = dialogLines[currentLine];
+            //dialogText.text = dialogLines[currentLine];
+            SetDialogText(dialogLines[currentLine]);
             dialogBox.SetActive(true);
 
 
@@ -621,7 +636,7 @@ public class DialogManager : MonoBehaviour {
         CheckIfName();
         CheckIfPortrait();
 
-        dialogText.text = finalMessage[currentLine];
+        SetDialogText(finalMessage[currentLine]);
         dialogBox.SetActive(true);
 
         if (!ControlManager.instance.mobile)
@@ -652,7 +667,7 @@ public class DialogManager : MonoBehaviour {
         CheckIfName();
         CheckIfPortrait();
 
-        dialogText.text = finalMessage[currentLine];
+        SetDialogText(finalMessage[currentLine]);
         dialogBox.SetActive(true);
 
         if (!ControlManager.instance.mobile)
