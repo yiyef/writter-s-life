@@ -1,32 +1,39 @@
 ﻿<Properties StartupConfiguration="{72BA8CAC-8C96-8A3A-5E45-F0A43BF76A2F}|">
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="68b66300-ed18-4b2f-a87c-c76b05eae31c" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/yiyefang/writter-s-life/writter-s-life2/MyUniversityMonitor/Assets/2D RPG Kit/Scripts/ScreenFade.cs" relfile="Assets/2D RPG Kit/Scripts/ScreenFade.cs" line="65" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/2D RPG Kit/Scripts/TriggerDialogAndChangeValue.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dcac5bb0-d951-4eb3-80cf-72fdc5476e40" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GleyPlugins/Localization/Scripts/WordIDs.cs">
     <Files>
       <File FileName="Assets/2D RPG Kit/Scripts/DialogStarter.cs" Line="137" Column="2" IsPinned="True" />
-      <File FileName="Assets/2D RPG Kit/Scripts/DialogManager.cs" Line="353" Column="31" />
+      <File FileName="Assets/2D RPG Kit/Scripts/DialogManager.cs" />
       <File FileName="Assets/2D RPG Kit/Scripts/CharacterStatus.cs" />
-      <File FileName="Assets/2D RPG Kit/Scripts/GameManager.cs" />
-      <File FileName="Assets/2D RPG Kit/Scripts/EventObjectActivator.cs" />
-      <File FileName="Assets/2D RPG Kit/Scripts/TitleScreen.cs" />
-      <File FileName="Assets/2D RPG Kit/Scripts/MainObjectsLoader.cs" Line="59" Column="87" />
-      <File FileName="Assets/2D RPG Kit/Scripts/PlayerMove.cs" />
-      <File FileName="Assets/2D RPG Kit/Scripts/GameMenu.cs" />
       <File FileName="Assets/2D RPG Kit/Scripts/MainHUD.cs" />
-      <File FileName="Assets/2D RPG Kit/Scripts/TriggerDialogAndChangeValue.cs" Line="44" Column="22" />
+      <File FileName="Assets/2D RPG Kit/Scripts/TriggerDialogAndChangeValue.cs" />
       <File FileName="Assets/2D RPG Kit/Scripts/CommonTools.cs" />
-      <File FileName="Assets/2D RPG Kit/Scripts/CommonEvents.cs" Line="240" Column="26" />
-      <File FileName="Assets/2D RPG Kit/Scripts/ScreenFade.cs" Line="52" Column="55" />
-      <File FileName="Assets/2D RPG Kit/Scripts/TeleportTo.cs" Line="23" Column="21" />
-      <File FileName="Assets/2D RPG Kit/Scripts/TeleportFrom.cs" Line="66" Column="2" />
-      <File FileName="Assets/2D RPG Kit/Scripts/BattleManager.cs" Line="1437" Column="29" />
-      <File FileName="Assets/2D RPG Kit/Scripts/BattleStarter.cs" Line="141" Column="29" />
-      <File FileName="Assets/2D RPG Kit/Scripts/Credits.cs" Line="42" Column="29" />
-      <File FileName="Assets/2D RPG Kit/Scripts/CameraController.cs" Line="31" Column="5" />
-      <File FileName="Assets/2D RPG Kit/Scripts/DirectionalLight.cs" Line="5" Column="14" />
-      <File FileName="Assets/2D RPG Kit/Scripts/CharacterProperties.cs" Line="1" Column="19" />
+      <File FileName="Assets/2D RPG Kit/Scripts/CommonEvents.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/ScreenFade.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/TeleportTo.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/TeleportFrom.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/BattleManager.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/BattleStarter.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/Credits.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/CameraController.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/CharacterProperties.cs" Line="12" Column="22" />
+      <File FileName="Assets/2D RPG Kit/Scripts/PropertiesActivator.cs" />
+      <File FileName="Assets/GleyPlugins/Localization/Scripts/VisualScriptingSupport/PlaymakerSupport/SetCurrentLanguage.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/QuestManager.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/QuestObjectActivator.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/GameMenu.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/ChestObjectActivator.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/Chest.cs" />
+      <File FileName="Assets/2D RPG Kit/Scripts/EventObjectActivator.cs" />
+      <File FileName="Assets/GleyPlugins/Localization/Scripts/WordIDs.cs" Line="15" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -39,18 +46,19 @@
                   <Node name="CrossPlatformInput" expanded="True" />
                 </Node>
               </Node>
+              <Node name="GleyPlugins" expanded="True">
+                <Node name="Localization" expanded="True">
+                  <Node name="Scripts" expanded="True">
+                    <Node name="VisualScriptingSupport" expanded="True">
+                      <Node name="PlaymakerSupport" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/yiyefang/writter-s-life/writter-s-life2/MyUniversityMonitor/Assets/2D RPG Kit/Scripts/ScreenFade.cs" relfile="Assets/2D RPG Kit/Scripts/ScreenFade.cs" line="65" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
