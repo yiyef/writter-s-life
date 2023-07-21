@@ -10,6 +10,7 @@ public class ChoiceData
     public bool NeedGoto;
     public int GotoIndex;
     public CharacterPropertiesInfo PropertiesInfo;
+    [TextArea] public string[] talks;
 }
 
 public class ChoiceComponent : MonoBehaviour
@@ -31,14 +32,28 @@ public class ChoiceComponent : MonoBehaviour
         {
             return;
         }
-
+        
+        if (_choiceData.talks != null && _choiceData.talks.Length > 0)
+        {
+            DialogManager.instance.ShowDialogAuto(null,_choiceData.talks,true);
+            return;
+        }
+        
         int nextGotoIndex = -1;
 
         if (_choiceData.NeedGoto)
         {
             nextGotoIndex = _choiceData.GotoIndex;
         }
+
+        DialogManager.instance.dialogBox.SetActive(false);
+        UIManager.Instance.ShowInput((content) =>
+        {
+            print("输入完毕");
+            DialogManager.instance.dialogBox.SetActive(true);
+
+        });
         DialogManager.instance.ShowNextDialog(nextGotoIndex);
-        CharacterProperties.AddOperation(_choiceData.PropertiesInfo); 
+        CharacterProperties.AddOperation(_choiceData.PropertiesInfo);
     }
 }

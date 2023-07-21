@@ -265,6 +265,7 @@ public class DialogManager : MonoBehaviour {
     public void ShowDialog(Sprite[] portraits, string[] newLines, bool isPerson)
     {
         dialogChoices.SetActive(false);
+        dialogGroup = null;
 
         if (newLines.Length != 0)
         {
@@ -393,6 +394,9 @@ public class DialogManager : MonoBehaviour {
     {
         Debug.Log("ShowDialogAuto");
         Debug.Log(newLines.Length);
+        choicesRoot.SetActive(false);
+        dialogGroup = null;
+        
         if (newLines.Length != 0)
         {
             dialogPortraits = portraits;
@@ -720,9 +724,14 @@ public class DialogManager : MonoBehaviour {
             }
         }
     }
-    
+
     public void CheckProperties()
     {
+        if (dialogGroup == null)
+        {
+            return;
+        }
+
         CharacterProperties.AddOperation(dialogGroup.FindProperties(dialogLines[currentLine]));
     }
 
